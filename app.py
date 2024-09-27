@@ -1,5 +1,5 @@
 # app.py
-from flask import Flask, render_template, request, jsonify, Response
+from flask import Flask, render_template, request, jsonify, Response, send_from_directory
 import subprocess
 import os
 import argparse
@@ -26,6 +26,10 @@ def enqueue_output(out, queue):
 def index():
     return render_template('index.html')
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.png')
 
 @app.route('/download', methods=['POST'])
 def download():
