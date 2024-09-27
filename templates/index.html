@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMDL Web UI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>GAMDL Web UI</h1>
+        <form id="downloadForm">
+            <input type="text" id="url" name="url" placeholder="Enter Apple Music URL" required>
+            <input type="text" id="output_path" name="output_path" placeholder="Output Path" value="/Volumes/WD_sn770/ytb_dl/Apple Music/test">
+            <input type="text" id="template_file_playlist" name="template_file_playlist" placeholder="Template File Playlist" value="Playlists/{playlist_title}">
+            <div>
+                <input type="checkbox" id="print_exceptions" name="print_exceptions">
+                <label for="print_exceptions">Print Exceptions</label>
+            </div>
+            <div>
+                <input type="checkbox" id="save_playlist" name="save_playlist">
+                <label for="save_playlist">Save Playlist</label>
+            </div>
+            <button type="submit">Download</button>
+        </form>
+        <div id="message"></div>
+        <div id="log" class="log-container"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
