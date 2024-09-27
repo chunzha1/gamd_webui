@@ -38,7 +38,7 @@ def download():
     if not os.path.exists(output_path):
         os.makedirs(output_path)
 
-    command = ['gamdl', '-o', output_path, '--template-file-playlist', template_file_playlist]
+    command = ['gamdl', '-o', output_path, '--template-file-playlist', template_file_playlist, '--ffmpeg-path', '/app/ffmpeg']
 
     if print_exceptions:
         command.append('--print-exceptions')

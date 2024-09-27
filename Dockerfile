@@ -9,7 +9,6 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     gcc \
     python3-dev \
-    ffmpeg \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -32,6 +31,7 @@ COPY app.py .
 COPY templates/ ./templates/
 COPY static/ ./static/
 COPY cookies.txt .
+COPY ffmpeg .
 
 # 升级pip并安装Python依赖
 RUN pip install --no-cache-dir --upgrade pip && \
