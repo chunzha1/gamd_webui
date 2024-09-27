@@ -36,9 +36,6 @@ COPY ffmpeg .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# 安装gamdl库
-RUN pip install gamdl
-
 # 创建输出目录
 RUN mkdir /app/output
 
