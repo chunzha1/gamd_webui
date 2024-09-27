@@ -7,6 +7,9 @@ import threading
 import queue
 import time
 
+# 在 app.py 的顶部添加这行
+OUTPUT_DIR = os.environ.get('OUTPUT_DIR', '/app/output')
+
 app = Flask(__name__)
 
 # 全局队列用于存储日志消息
@@ -27,7 +30,7 @@ def index():
 @app.route('/download', methods=['POST'])
 def download():
     url = request.form['url']
-    output_path = request.form['output_path']
+    output_path = os.path.join(OUTPUT_DIR, request.form['output_path'])
     template_file_playlist = request.form['template_file_playlist']
     print_exceptions = 'print_exceptions' in request.form
     save_playlist = 'save_playlist' in request.form

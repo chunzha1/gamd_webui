@@ -1,0 +1,11 @@
+# docker-compose.yml
+version: '3'
+services:
+  gamdl-web:
+    build: .
+    ports:
+      - "8120:5000"
+    volumes:
+      - /Volumes/WD_sn770/ytb_dl/Apple Music:/app/output
+    environment:
+      - OUTPUT_DIR=/app/output

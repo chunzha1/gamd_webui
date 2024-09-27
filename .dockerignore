@@ -1,0 +1,5 @@
+# .dockerignore
+venv/
+*.pyc
+__pycache__/
+host_output/
