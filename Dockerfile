@@ -20,7 +20,6 @@ RUN if [ $? -ne 0 ]; then \
     apt-get install -y --no-install-recommends \
     gcc \
     python3-dev \
-    ffmpeg \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*; \
     fi
